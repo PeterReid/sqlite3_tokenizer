@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TokenKind` enum in crate `sqlite3_tokenizer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TokenKind">
+
+    <title>sqlite3_tokenizer::TokenKind - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>sqlite3_tokenizer</a></p><script>window.sidebarCurrent = {name: 'TokenKind', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>sqlite3_tokenizer</a>::<wbr><a class='enum' href=''>TokenKind</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]</a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-20' href='../src/sqlite3_tokenizer/lib.rs.html#48-208'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum TokenKind {
+    Semicolon,
+    Explain,
+    Query,
+    Plan,
+    Begin,
+    Transaction,
+    Deferred,
+    Immediate,
+    Exclusive,
+    Commit,
+    End,
+    Rollback,
+    Savepoint,
+    Release,
+    To,
+    Table,
+    Create,
+    If,
+    Not,
+    Exists,
+    Temp,
+    LeftParen,
+    RightParen,
+    As,
+    Without,
+    Comma,
+    Id,
+    Indexed,
+    Abort,
+    Action,
+    After,
+    Analyze,
+    Asc,
+    Attach,
+    Before,
+    By,
+    Cascade,
+    Cast,
+    ColumnKw,
+    Conflict,
+    Database,
+    Desc,
+    Detach,
+    Each,
+    Fail,
+    For,
+    Ignore,
+    Initially,
+    Instead,
+    Like,
+    Match,
+    No,
+    Key,
+    Of,
+    Offset,
+    Pragma,
+    Raise,
+    Recursive,
+    Replace,
+    Restrict,
+    Row,
+    Trigger,
+    Vacuum,
+    View,
+    Virtual,
+    With,
+    Reindex,
+    Rename,
+    CurrentTime,
+    Any,
+    Or,
+    And,
+    Is,
+    Between,
+    In,
+    IsNull,
+    NotNull,
+    NotEqual,
+    Equal,
+    Greater,
+    LessOrEqual,
+    Less,
+    GreaterOrEqual,
+    Escape,
+    BitAnd,
+    BitOr,
+    LeftShift,
+    RightShift,
+    Plus,
+    Minus,
+    Star,
+    Slash,
+    Remainder,
+    Concat,
+    Collate,
+    BitNot,
+    String,
+    JoinKw,
+    Constraint,
+    Default,
+    Null,
+    Primary,
+    Unique,
+    Check,
+    References,
+    AutoIncrement,
+    On,
+    Insert,
+    Delete,
+    Update,
+    Set,
+    Deferrable,
+    Foreign,
+    Drop,
+    Union,
+    All,
+    Except,
+    Intersect,
+    Select,
+    Values,
+    Distinct,
+    Dot,
+    From,
+    Join,
+    Using,
+    Order,
+    Group,
+    Having,
+    Limit,
+    Where,
+    Into,
+    Integer,
+    Float,
+    Blob,
+    Variable,
+    Case,
+    When,
+    Then,
+    Else,
+    Index,
+    Alter,
+    Add,
+    ToText,
+    ToBlob,
+    ToNumeric,
+    ToInt,
+    ToReal,
+    IsNot,
+    EndOfFile,
+    Illegal,
+    Space,
+    UnclosedString,
+    Function,
+    Column,
+    AggFunction,
+    AggColumn,
+    UnaryMinus,
+    UnaryPlus,
+    Register,
+}</pre><div class='docblock'><p>Describes the kind of token recognized</p>
+
+<p>Many of these tokens are simply fixed words (e.g. SELECT) or punctuation.</p>
+
+<p>Some of the more varied ones are:</p>
+
+<ul>
+<li><code>Variable</code>: A placeholder for a value in a prepared statement. <code>?</code> or <code>?7</code> or <code>@a</code> or <code>:b</code> or <code>#c</code></li>
+<li><code>Space</code>: Whitespace, but also comments.</li>
+<li><code>Id</code>: A user-defined identifier. <code>my_column</code> or <code>[some table]</code> or <code>&quot;that function&quot;</code> or <code>`a trigger`</code>.</li>
+<li><code>String</code>: A string literal. <code>&#39;abcd&#39;</code> or <code>&#39;planet&#39;&#39;s moon&#39;</code></li>
+<li><code>Blob</code>: A hexadecimal-encoded byte sequence literal. <code>x&#39;FEFF6564&#39;</code></li>
+</ul>
+</div><h2 class='variants'>Variants</h2>
+<table><tr><td id='variant.Semicolon'><a class='stability Unmarked' title='No stability level'></a><code>Semicolon</code></td><td></td></tr><tr><td id='variant.Explain'><a class='stability Unmarked' title='No stability level'></a><code>Explain</code></td><td></td></tr><tr><td id='variant.Query'><a class='stability Unmarked' title='No stability level'></a><code>Query</code></td><td></td></tr><tr><td id='variant.Plan'><a class='stability Unmarked' title='No stability level'></a><code>Plan</code></td><td></td></tr><tr><td id='variant.Begin'><a class='stability Unmarked' title='No stability level'></a><code>Begin</code></td><td></td></tr><tr><td id='variant.Transaction'><a class='stability Unmarked' title='No stability level'></a><code>Transaction</code></td><td></td></tr><tr><td id='variant.Deferred'><a class='stability Unmarked' title='No stability level'></a><code>Deferred</code></td><td></td></tr><tr><td id='variant.Immediate'><a class='stability Unmarked' title='No stability level'></a><code>Immediate</code></td><td></td></tr><tr><td id='variant.Exclusive'><a class='stability Unmarked' title='No stability level'></a><code>Exclusive</code></td><td></td></tr><tr><td id='variant.Commit'><a class='stability Unmarked' title='No stability level'></a><code>Commit</code></td><td></td></tr><tr><td id='variant.End'><a class='stability Unmarked' title='No stability level'></a><code>End</code></td><td></td></tr><tr><td id='variant.Rollback'><a class='stability Unmarked' title='No stability level'></a><code>Rollback</code></td><td></td></tr><tr><td id='variant.Savepoint'><a class='stability Unmarked' title='No stability level'></a><code>Savepoint</code></td><td></td></tr><tr><td id='variant.Release'><a class='stability Unmarked' title='No stability level'></a><code>Release</code></td><td></td></tr><tr><td id='variant.To'><a class='stability Unmarked' title='No stability level'></a><code>To</code></td><td></td></tr><tr><td id='variant.Table'><a class='stability Unmarked' title='No stability level'></a><code>Table</code></td><td></td></tr><tr><td id='variant.Create'><a class='stability Unmarked' title='No stability level'></a><code>Create</code></td><td></td></tr><tr><td id='variant.If'><a class='stability Unmarked' title='No stability level'></a><code>If</code></td><td></td></tr><tr><td id='variant.Not'><a class='stability Unmarked' title='No stability level'></a><code>Not</code></td><td></td></tr><tr><td id='variant.Exists'><a class='stability Unmarked' title='No stability level'></a><code>Exists</code></td><td></td></tr><tr><td id='variant.Temp'><a class='stability Unmarked' title='No stability level'></a><code>Temp</code></td><td></td></tr><tr><td id='variant.LeftParen'><a class='stability Unmarked' title='No stability level'></a><code>LeftParen</code></td><td></td></tr><tr><td id='variant.RightParen'><a class='stability Unmarked' title='No stability level'></a><code>RightParen</code></td><td></td></tr><tr><td id='variant.As'><a class='stability Unmarked' title='No stability level'></a><code>As</code></td><td></td></tr><tr><td id='variant.Without'><a class='stability Unmarked' title='No stability level'></a><code>Without</code></td><td></td></tr><tr><td id='variant.Comma'><a class='stability Unmarked' title='No stability level'></a><code>Comma</code></td><td></td></tr><tr><td id='variant.Id'><a class='stability Unmarked' title='No stability level'></a><code>Id</code></td><td></td></tr><tr><td id='variant.Indexed'><a class='stability Unmarked' title='No stability level'></a><code>Indexed</code></td><td></td></tr><tr><td id='variant.Abort'><a class='stability Unmarked' title='No stability level'></a><code>Abort</code></td><td></td></tr><tr><td id='variant.Action'><a class='stability Unmarked' title='No stability level'></a><code>Action</code></td><td></td></tr><tr><td id='variant.After'><a class='stability Unmarked' title='No stability level'></a><code>After</code></td><td></td></tr><tr><td id='variant.Analyze'><a class='stability Unmarked' title='No stability level'></a><code>Analyze</code></td><td></td></tr><tr><td id='variant.Asc'><a class='stability Unmarked' title='No stability level'></a><code>Asc</code></td><td></td></tr><tr><td id='variant.Attach'><a class='stability Unmarked' title='No stability level'></a><code>Attach</code></td><td></td></tr><tr><td id='variant.Before'><a class='stability Unmarked' title='No stability level'></a><code>Before</code></td><td></td></tr><tr><td id='variant.By'><a class='stability Unmarked' title='No stability level'></a><code>By</code></td><td></td></tr><tr><td id='variant.Cascade'><a class='stability Unmarked' title='No stability level'></a><code>Cascade</code></td><td></td></tr><tr><td id='variant.Cast'><a class='stability Unmarked' title='No stability level'></a><code>Cast</code></td><td></td></tr><tr><td id='variant.ColumnKw'><a class='stability Unmarked' title='No stability level'></a><code>ColumnKw</code></td><td></td></tr><tr><td id='variant.Conflict'><a class='stability Unmarked' title='No stability level'></a><code>Conflict</code></td><td></td></tr><tr><td id='variant.Database'><a class='stability Unmarked' title='No stability level'></a><code>Database</code></td><td></td></tr><tr><td id='variant.Desc'><a class='stability Unmarked' title='No stability level'></a><code>Desc</code></td><td></td></tr><tr><td id='variant.Detach'><a class='stability Unmarked' title='No stability level'></a><code>Detach</code></td><td></td></tr><tr><td id='variant.Each'><a class='stability Unmarked' title='No stability level'></a><code>Each</code></td><td></td></tr><tr><td id='variant.Fail'><a class='stability Unmarked' title='No stability level'></a><code>Fail</code></td><td></td></tr><tr><td id='variant.For'><a class='stability Unmarked' title='No stability level'></a><code>For</code></td><td></td></tr><tr><td id='variant.Ignore'><a class='stability Unmarked' title='No stability level'></a><code>Ignore</code></td><td></td></tr><tr><td id='variant.Initially'><a class='stability Unmarked' title='No stability level'></a><code>Initially</code></td><td></td></tr><tr><td id='variant.Instead'><a class='stability Unmarked' title='No stability level'></a><code>Instead</code></td><td></td></tr><tr><td id='variant.Like'><a class='stability Unmarked' title='No stability level'></a><code>Like</code></td><td></td></tr><tr><td id='variant.Match'><a class='stability Unmarked' title='No stability level'></a><code>Match</code></td><td></td></tr><tr><td id='variant.No'><a class='stability Unmarked' title='No stability level'></a><code>No</code></td><td></td></tr><tr><td id='variant.Key'><a class='stability Unmarked' title='No stability level'></a><code>Key</code></td><td></td></tr><tr><td id='variant.Of'><a class='stability Unmarked' title='No stability level'></a><code>Of</code></td><td></td></tr><tr><td id='variant.Offset'><a class='stability Unmarked' title='No stability level'></a><code>Offset</code></td><td></td></tr><tr><td id='variant.Pragma'><a class='stability Unmarked' title='No stability level'></a><code>Pragma</code></td><td></td></tr><tr><td id='variant.Raise'><a class='stability Unmarked' title='No stability level'></a><code>Raise</code></td><td></td></tr><tr><td id='variant.Recursive'><a class='stability Unmarked' title='No stability level'></a><code>Recursive</code></td><td></td></tr><tr><td id='variant.Replace'><a class='stability Unmarked' title='No stability level'></a><code>Replace</code></td><td></td></tr><tr><td id='variant.Restrict'><a class='stability Unmarked' title='No stability level'></a><code>Restrict</code></td><td></td></tr><tr><td id='variant.Row'><a class='stability Unmarked' title='No stability level'></a><code>Row</code></td><td></td></tr><tr><td id='variant.Trigger'><a class='stability Unmarked' title='No stability level'></a><code>Trigger</code></td><td></td></tr><tr><td id='variant.Vacuum'><a class='stability Unmarked' title='No stability level'></a><code>Vacuum</code></td><td></td></tr><tr><td id='variant.View'><a class='stability Unmarked' title='No stability level'></a><code>View</code></td><td></td></tr><tr><td id='variant.Virtual'><a class='stability Unmarked' title='No stability level'></a><code>Virtual</code></td><td></td></tr><tr><td id='variant.With'><a class='stability Unmarked' title='No stability level'></a><code>With</code></td><td></td></tr><tr><td id='variant.Reindex'><a class='stability Unmarked' title='No stability level'></a><code>Reindex</code></td><td></td></tr><tr><td id='variant.Rename'><a class='stability Unmarked' title='No stability level'></a><code>Rename</code></td><td></td></tr><tr><td id='variant.CurrentTime'><a class='stability Unmarked' title='No stability level'></a><code>CurrentTime</code></td><td></td></tr><tr><td id='variant.Any'><a class='stability Unmarked' title='No stability level'></a><code>Any</code></td><td></td></tr><tr><td id='variant.Or'><a class='stability Unmarked' title='No stability level'></a><code>Or</code></td><td></td></tr><tr><td id='variant.And'><a class='stability Unmarked' title='No stability level'></a><code>And</code></td><td></td></tr><tr><td id='variant.Is'><a class='stability Unmarked' title='No stability level'></a><code>Is</code></td><td></td></tr><tr><td id='variant.Between'><a class='stability Unmarked' title='No stability level'></a><code>Between</code></td><td></td></tr><tr><td id='variant.In'><a class='stability Unmarked' title='No stability level'></a><code>In</code></td><td></td></tr><tr><td id='variant.IsNull'><a class='stability Unmarked' title='No stability level'></a><code>IsNull</code></td><td></td></tr><tr><td id='variant.NotNull'><a class='stability Unmarked' title='No stability level'></a><code>NotNull</code></td><td></td></tr><tr><td id='variant.NotEqual'><a class='stability Unmarked' title='No stability level'></a><code>NotEqual</code></td><td></td></tr><tr><td id='variant.Equal'><a class='stability Unmarked' title='No stability level'></a><code>Equal</code></td><td></td></tr><tr><td id='variant.Greater'><a class='stability Unmarked' title='No stability level'></a><code>Greater</code></td><td></td></tr><tr><td id='variant.LessOrEqual'><a class='stability Unmarked' title='No stability level'></a><code>LessOrEqual</code></td><td></td></tr><tr><td id='variant.Less'><a class='stability Unmarked' title='No stability level'></a><code>Less</code></td><td></td></tr><tr><td id='variant.GreaterOrEqual'><a class='stability Unmarked' title='No stability level'></a><code>GreaterOrEqual</code></td><td></td></tr><tr><td id='variant.Escape'><a class='stability Unmarked' title='No stability level'></a><code>Escape</code></td><td></td></tr><tr><td id='variant.BitAnd'><a class='stability Unmarked' title='No stability level'></a><code>BitAnd</code></td><td></td></tr><tr><td id='variant.BitOr'><a class='stability Unmarked' title='No stability level'></a><code>BitOr</code></td><td></td></tr><tr><td id='variant.LeftShift'><a class='stability Unmarked' title='No stability level'></a><code>LeftShift</code></td><td></td></tr><tr><td id='variant.RightShift'><a class='stability Unmarked' title='No stability level'></a><code>RightShift</code></td><td></td></tr><tr><td id='variant.Plus'><a class='stability Unmarked' title='No stability level'></a><code>Plus</code></td><td></td></tr><tr><td id='variant.Minus'><a class='stability Unmarked' title='No stability level'></a><code>Minus</code></td><td></td></tr><tr><td id='variant.Star'><a class='stability Unmarked' title='No stability level'></a><code>Star</code></td><td></td></tr><tr><td id='variant.Slash'><a class='stability Unmarked' title='No stability level'></a><code>Slash</code></td><td></td></tr><tr><td id='variant.Remainder'><a class='stability Unmarked' title='No stability level'></a><code>Remainder</code></td><td></td></tr><tr><td id='variant.Concat'><a class='stability Unmarked' title='No stability level'></a><code>Concat</code></td><td></td></tr><tr><td id='variant.Collate'><a class='stability Unmarked' title='No stability level'></a><code>Collate</code></td><td></td></tr><tr><td id='variant.BitNot'><a class='stability Unmarked' title='No stability level'></a><code>BitNot</code></td><td></td></tr><tr><td id='variant.String'><a class='stability Unmarked' title='No stability level'></a><code>String</code></td><td></td></tr><tr><td id='variant.JoinKw'><a class='stability Unmarked' title='No stability level'></a><code>JoinKw</code></td><td></td></tr><tr><td id='variant.Constraint'><a class='stability Unmarked' title='No stability level'></a><code>Constraint</code></td><td></td></tr><tr><td id='variant.Default'><a class='stability Unmarked' title='No stability level'></a><code>Default</code></td><td></td></tr><tr><td id='variant.Null'><a class='stability Unmarked' title='No stability level'></a><code>Null</code></td><td></td></tr><tr><td id='variant.Primary'><a class='stability Unmarked' title='No stability level'></a><code>Primary</code></td><td></td></tr><tr><td id='variant.Unique'><a class='stability Unmarked' title='No stability level'></a><code>Unique</code></td><td></td></tr><tr><td id='variant.Check'><a class='stability Unmarked' title='No stability level'></a><code>Check</code></td><td></td></tr><tr><td id='variant.References'><a class='stability Unmarked' title='No stability level'></a><code>References</code></td><td></td></tr><tr><td id='variant.AutoIncrement'><a class='stability Unmarked' title='No stability level'></a><code>AutoIncrement</code></td><td></td></tr><tr><td id='variant.On'><a class='stability Unmarked' title='No stability level'></a><code>On</code></td><td></td></tr><tr><td id='variant.Insert'><a class='stability Unmarked' title='No stability level'></a><code>Insert</code></td><td></td></tr><tr><td id='variant.Delete'><a class='stability Unmarked' title='No stability level'></a><code>Delete</code></td><td></td></tr><tr><td id='variant.Update'><a class='stability Unmarked' title='No stability level'></a><code>Update</code></td><td></td></tr><tr><td id='variant.Set'><a class='stability Unmarked' title='No stability level'></a><code>Set</code></td><td></td></tr><tr><td id='variant.Deferrable'><a class='stability Unmarked' title='No stability level'></a><code>Deferrable</code></td><td></td></tr><tr><td id='variant.Foreign'><a class='stability Unmarked' title='No stability level'></a><code>Foreign</code></td><td></td></tr><tr><td id='variant.Drop'><a class='stability Unmarked' title='No stability level'></a><code>Drop</code></td><td></td></tr><tr><td id='variant.Union'><a class='stability Unmarked' title='No stability level'></a><code>Union</code></td><td></td></tr><tr><td id='variant.All'><a class='stability Unmarked' title='No stability level'></a><code>All</code></td><td></td></tr><tr><td id='variant.Except'><a class='stability Unmarked' title='No stability level'></a><code>Except</code></td><td></td></tr><tr><td id='variant.Intersect'><a class='stability Unmarked' title='No stability level'></a><code>Intersect</code></td><td></td></tr><tr><td id='variant.Select'><a class='stability Unmarked' title='No stability level'></a><code>Select</code></td><td></td></tr><tr><td id='variant.Values'><a class='stability Unmarked' title='No stability level'></a><code>Values</code></td><td></td></tr><tr><td id='variant.Distinct'><a class='stability Unmarked' title='No stability level'></a><code>Distinct</code></td><td></td></tr><tr><td id='variant.Dot'><a class='stability Unmarked' title='No stability level'></a><code>Dot</code></td><td></td></tr><tr><td id='variant.From'><a class='stability Unmarked' title='No stability level'></a><code>From</code></td><td></td></tr><tr><td id='variant.Join'><a class='stability Unmarked' title='No stability level'></a><code>Join</code></td><td></td></tr><tr><td id='variant.Using'><a class='stability Unmarked' title='No stability level'></a><code>Using</code></td><td></td></tr><tr><td id='variant.Order'><a class='stability Unmarked' title='No stability level'></a><code>Order</code></td><td></td></tr><tr><td id='variant.Group'><a class='stability Unmarked' title='No stability level'></a><code>Group</code></td><td></td></tr><tr><td id='variant.Having'><a class='stability Unmarked' title='No stability level'></a><code>Having</code></td><td></td></tr><tr><td id='variant.Limit'><a class='stability Unmarked' title='No stability level'></a><code>Limit</code></td><td></td></tr><tr><td id='variant.Where'><a class='stability Unmarked' title='No stability level'></a><code>Where</code></td><td></td></tr><tr><td id='variant.Into'><a class='stability Unmarked' title='No stability level'></a><code>Into</code></td><td></td></tr><tr><td id='variant.Integer'><a class='stability Unmarked' title='No stability level'></a><code>Integer</code></td><td></td></tr><tr><td id='variant.Float'><a class='stability Unmarked' title='No stability level'></a><code>Float</code></td><td></td></tr><tr><td id='variant.Blob'><a class='stability Unmarked' title='No stability level'></a><code>Blob</code></td><td></td></tr><tr><td id='variant.Variable'><a class='stability Unmarked' title='No stability level'></a><code>Variable</code></td><td></td></tr><tr><td id='variant.Case'><a class='stability Unmarked' title='No stability level'></a><code>Case</code></td><td></td></tr><tr><td id='variant.When'><a class='stability Unmarked' title='No stability level'></a><code>When</code></td><td></td></tr><tr><td id='variant.Then'><a class='stability Unmarked' title='No stability level'></a><code>Then</code></td><td></td></tr><tr><td id='variant.Else'><a class='stability Unmarked' title='No stability level'></a><code>Else</code></td><td></td></tr><tr><td id='variant.Index'><a class='stability Unmarked' title='No stability level'></a><code>Index</code></td><td></td></tr><tr><td id='variant.Alter'><a class='stability Unmarked' title='No stability level'></a><code>Alter</code></td><td></td></tr><tr><td id='variant.Add'><a class='stability Unmarked' title='No stability level'></a><code>Add</code></td><td></td></tr><tr><td id='variant.ToText'><a class='stability Unmarked' title='No stability level'></a><code>ToText</code></td><td></td></tr><tr><td id='variant.ToBlob'><a class='stability Unmarked' title='No stability level'></a><code>ToBlob</code></td><td></td></tr><tr><td id='variant.ToNumeric'><a class='stability Unmarked' title='No stability level'></a><code>ToNumeric</code></td><td></td></tr><tr><td id='variant.ToInt'><a class='stability Unmarked' title='No stability level'></a><code>ToInt</code></td><td></td></tr><tr><td id='variant.ToReal'><a class='stability Unmarked' title='No stability level'></a><code>ToReal</code></td><td></td></tr><tr><td id='variant.IsNot'><a class='stability Unmarked' title='No stability level'></a><code>IsNot</code></td><td></td></tr><tr><td id='variant.EndOfFile'><a class='stability Unmarked' title='No stability level'></a><code>EndOfFile</code></td><td></td></tr><tr><td id='variant.Illegal'><a class='stability Unmarked' title='No stability level'></a><code>Illegal</code></td><td></td></tr><tr><td id='variant.Space'><a class='stability Unmarked' title='No stability level'></a><code>Space</code></td><td></td></tr><tr><td id='variant.UnclosedString'><a class='stability Unmarked' title='No stability level'></a><code>UnclosedString</code></td><td></td></tr><tr><td id='variant.Function'><a class='stability Unmarked' title='No stability level'></a><code>Function</code></td><td></td></tr><tr><td id='variant.Column'><a class='stability Unmarked' title='No stability level'></a><code>Column</code></td><td></td></tr><tr><td id='variant.AggFunction'><a class='stability Unmarked' title='No stability level'></a><code>AggFunction</code></td><td></td></tr><tr><td id='variant.AggColumn'><a class='stability Unmarked' title='No stability level'></a><code>AggColumn</code></td><td></td></tr><tr><td id='variant.UnaryMinus'><a class='stability Unmarked' title='No stability level'></a><code>UnaryMinus</code></td><td></td></tr><tr><td id='variant.UnaryPlus'><a class='stability Unmarked' title='No stability level'></a><code>UnaryPlus</code></td><td></td></tr><tr><td id='variant.Register'><a class='stability Unmarked' title='No stability level'></a><code>Register</code></td><td></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../sqlite3_tokenizer/enum.TokenKind.html' title='sqlite3_tokenizer::TokenKind'>TokenKind</a></code></h3><div class='impl-items'></div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../sqlite3_tokenizer/enum.TokenKind.html' title='sqlite3_tokenizer::TokenKind'>TokenKind</a></code></h3><div class='impl-items'><h4 id='method.eq' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='http://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../sqlite3_tokenizer/enum.TokenKind.html' title='sqlite3_tokenizer::TokenKind'>TokenKind</a>) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='http://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../sqlite3_tokenizer/enum.TokenKind.html' title='sqlite3_tokenizer::TokenKind'>TokenKind</a>) -&gt; <a href='http://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../sqlite3_tokenizer/enum.TokenKind.html' title='sqlite3_tokenizer::TokenKind'>TokenKind</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='http://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../sqlite3_tokenizer/enum.TokenKind.html' title='sqlite3_tokenizer::TokenKind'>TokenKind</a></code></h4>
+<h4 id='method.clone_from' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='http://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='enum' href='../sqlite3_tokenizer/enum.TokenKind.html' title='sqlite3_tokenizer::TokenKind'>TokenKind</a></code></h3><div class='impl-items'></div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../sqlite3_tokenizer/enum.TokenKind.html' title='sqlite3_tokenizer::TokenKind'>TokenKind</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='http://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='http://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='http://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "sqlite3_tokenizer";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>

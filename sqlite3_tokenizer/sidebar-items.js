@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["TokenKind","Describes the kind of token recognized"]],"struct":[["Token","A single parsed token, describing its type and the string it came from"],["Tokenizer","Iterates over tokens in a string"]]});
