@@ -1,0 +1,13 @@
+[package]
+name = "sqlite3_tokenizer"
+version = "0.1.0"
+authors = ["Peter Reid <peter.d.reid@gmail.com>"]
+license = "MIT"
+
+build = "build.rs"
+
+[build-dependencies]
+gcc = "*"
+
+[dependencies]
+libc = "*"
